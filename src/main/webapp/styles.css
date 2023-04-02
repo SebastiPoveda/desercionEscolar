@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.encabezado-img{
+  background-image: url(assets/background-image.jpg);
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.encabezado-img h1{
+  font-size: 50px;
+  color: blanchedalmond;
+}
+
+.encabezado-img p{
+  font-size: 20px;
+  color: blanchedalmond;
+}

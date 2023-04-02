@@ -1,0 +1,65 @@
+PENSUM DE LA CARRERA EN CIENCIAS DE LA COMPUTACIÓN E INTELIGENCIA ARTIFICIAL
+1 SEMESTRE
+Pensamiento Algorítmico
+Introducción a IA-CC
+Tecnología Inteligente y Sociedad Contemporánea
+Ciencia Computacional Básica
+Cálculo Diferencial
+Organización del Estado Colombiano
+Gramática, Lectura y Escritura Académica I
+2 SEMESTRE
+Fundamentos de Diseño de Software
+Cibernética y Sistemas Inteligentes
+Física Mecánica y Laboratorio
+Álgebra Lineal Aplicada
+Cálculo Integral
+Gramática, Lectura y Escritura Académica II
+3 SEMESTRE
+Estructura de Datos Lineales
+Paradigmas de Programación
+Arquitectura de Computadores
+Física Electromagnética y Laboratorio
+Modelación Matemática para Ingeniería (ecuaciones diferenciales)
+Cultura Religiosa
+4 SEMESTRE
+Estructura de Datos No Lineales
+Análisis de Algoritmos
+Redes de Computación
+Ciencia Computacional Intermedia
+Optativa I
+Cátedra Rodrigo Noguera Laborde
+5 SEMESTRE
+Bases de Datos
+Lenguajes de Programación y Transducción
+Sistemas Operativos
+Ciencia Computacional Avanzada
+Optativa II
+Electiva Humanidades
+6 SEMESTRE
+Ingeniería de Software
+Patrones de Diseño de Software
+Computación Paralela y Distribuida
+Inteligencia Artificial
+Dirección y Gestión de Proyectos
+Optativa III
+7 SEMESTRE
+Arquitectura de Software
+Seminario de I+D+I
+Big Data e Ingeniería de Datos
+Seguridad de la Información
+Aprendizaje de Máquina
+Optativa IV
+Electiva Humanidades II
+8 SEMESTRE
+Electiva I
+Electiva II
+Electiva III
+Diseño Creativo
+Optativa V
+Ética y Responsabilidad Social
+9 SEMESTRE
+Electiva IV
+Electiva V
+Electiva VI
+Opción de Grado
+Optativa VI

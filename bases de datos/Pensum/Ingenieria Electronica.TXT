@@ -1,0 +1,60 @@
+PENSUM DE LA CARRERA EN INGENIERÍA ELECTRÓNICA
+1 SEMESTRE
+Cálculo Diferencial
+Pensamiento Computacional
+Introducción a la Ingeniería Electrónica y Laboratorio
+Física Mecánica y Laboratorio
+Lectura y Escritura 1
+Álgebra Lineal Aplicada
+2 SEMESTRE
+Cálculo Integral
+Programación para Ingeniería Electrónica
+Lectura y Escritura 2
+Física Electromagnética y Laboratorio
+Análisis de Circuitos
+Probabilidad y Estadística
+3 SEMESTRE
+Organismos del estado Colombiano
+Diseño Electrónico Básico
+Electrónica Digital
+Electrónica de semiconductores
+Electiva de Libre Elección 1
+Fluidos y Termodinámica
+Cálculo Vectorial y Multivariado
+4 SEMESTRE
+Ecuaciones Diferenciales
+Cultura e Historia de la Religión
+Variable Compleja
+Ondas y Campos Electromagnéticos
+Electrónica Aplicada
+Arquitectura de Computadores
+5 SEMESTRE
+Cátedra Rodrigo Noguera Laborde
+Diseño Electrónico Intermedio
+Teoría de Sistemas Lineales
+Sistemas Embebidos
+Sensores e Instrumentación
+Seminario de I+D+I
+Inteligencia Artificial
+6 SEMESTRE
+Electiva Humanidades 1
+Electiva de Libre Elección 2
+Ética y Responsabilidad Social
+Optativa A1
+Optativa B1
+Electiva Disciplinar 1
+Electiva Disciplinar 2
+7 SEMESTRE
+Diseño de Producto 1
+Optativa A2
+Optativa B2
+Electiva Disciplinar 3
+Electiva Disciplinar 4
+Introducción a la Economía
+8 SEMESTRE
+Dirección y Gestión de Proyectos
+Electiva Humanidades 2
+Optativa A3
+Optativa B3
+Opción de Grado
+Diseño de Producto 2
