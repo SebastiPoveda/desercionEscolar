@@ -7,7 +7,6 @@ import java.util.List;
 
 import jakarta.persistence.*;
 
-@SuppressWarnings("serial")
 @Entity
 @Table(name = "usuarios")
 public class Usuarios implements Serializable {
@@ -19,7 +18,7 @@ public class Usuarios implements Serializable {
 	private String email;
 
 	@ManyToMany
-	@JoinColumn(name = "favoritos")
+	@JoinColumn(name = "carreras favoritas")
 	@JsonIgnoreProperties("usuarios")
 	private List<Carreras> listaFavoritos;
 
