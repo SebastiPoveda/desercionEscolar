@@ -15,8 +15,8 @@ public class Carreras implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer carrerasID;
 	private String modalidad;
-	private int semestres;
-	private int creditos;
+	private Integer semestres;
+	private Integer creditos;
 
 	@ManyToOne
 	@JoinColumn(name = "areasId")
@@ -44,19 +44,19 @@ public class Carreras implements Serializable {
 		this.modalidad = modalidad;
 	}
 
-	public int getSemestres() {
+	public Integer getSemestres() {
 		return semestres;
 	}
 
-	public void setSemestres(int semestres) {
+	public void setSemestres(Integer semestres) {
 		this.semestres = semestres;
 	}
 
-	public int getCreditos() {
+	public Integer getCreditos() {
 		return creditos;
 	}
 
-	public void setCreditos(int creditos) {
+	public void setCreditos(Integer creditos) {
 		this.creditos = creditos;
 	}
 
@@ -75,4 +75,6 @@ public class Carreras implements Serializable {
 	public void setUsuarios(List<Usuarios> usuarios) {
 		this.usuarios = usuarios;
 	}
+
+
 }
