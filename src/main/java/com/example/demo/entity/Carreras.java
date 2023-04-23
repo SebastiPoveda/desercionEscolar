@@ -19,12 +19,12 @@ public class Carreras implements Serializable {
 	private Integer creditos;
 
 	@ManyToOne
-	@JoinColumn(name = "areasId")
+	@JoinColumn(name = "areaId")
 	@JsonIgnoreProperties("carreras")
 	private Area area;
 
 	@ManyToMany
-	@JoinColumn(name = "lista de usuarios")
+	@JoinColumn(name = "lista de usuarios por carrera")
 	@JsonIgnoreProperties("carreras")
 	private List<Usuarios> usuarios;
 
