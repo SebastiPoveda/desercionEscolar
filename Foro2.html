@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foro de preguntas</title>
+  <style>
+   /* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F5F5F5;
+  color: #333333;
+  margin: 0;
+}
+
+header, footer {
+  background-color: hsl(146, 100%, 36%);
+  color: #FFFFFF;
+  padding: 1rem;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #008CBA;
+}
+
+.boton-nuevo {
+  background-color: hsl(146, 100%, 36%);
+  color: #FFFFFF;
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.boton-nuevo:hover {
+  background-color: #006A7F;
+}
+
+/* Estilos de las secciones */
+.preguntas {
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  margin: auto;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  width: 80%; 
+}
+
+.preguntas h2 {
+  color: hsl(146, 100%, 36%);
+}
+
+.preguntas li {
+  border-bottom: 1px solid #CCCCCC;
+  padding: 1rem 0;
+}
+
+.preguntas li:last-of-type {
+  border-bottom: none;
+}
+
+.preguntas li a {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.preguntas li span {
+  color: #999999;
+  font-size: 0.8rem;
+}
+
+
+footer {
+    clear: both;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.pagination li {
+  display: inline-block;
+  margin: 0 0.5rem;
+}
+
+.pagination li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #333333;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 0.5rem;
+}
+
+.pagination li.active a {
+  color: #FFFFFF;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+.preguntaa {
+			font-weight: bold;
+			cursor: pointer;
+      color: #333333;
+      text-decoration: none;
+			margin-bottom: 10px;
+      font-size: 19px;
+      
+		
+      
+		}
+	.preguntaa:hover{
+    color: #008CBA;
+  }	
+		.respuestaa {
+			display: none;
+			margin-top: 10px;
+			padding: 10px;
+			border: 1px solid black;
+			background-color: #f2f2f2;
+      
+		
+		}
+    .boton-nuevo {
+  background-color: hsl(146, 100%, 36%);
+  color: #FFFFFF;
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.boton-nuevo:hover {
+  background-color: #006A7F;
+}
+.comment-section {
+  background-color: #F9F9F9;
+  border: 1px solid #CCCCCC;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.comment-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.comment-section form {
+  margin-bottom: 1rem;
+}
+
+.comment-section form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.comment-section form input[type="text"],
+.comment-section form textarea {
+  border: 1px solid #CCCCCC;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.comment-section form button[type="submit"] {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 0.25rem;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.comment-section form button[type="submit"]:hover {
+  background-color: #3E8E41;
+}
+
+.comment-section .comentarios h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.comment-section .comentarios ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.comment-section .comentarios li {
+  border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.comment-section .comentarios li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.comment-section .comentarios .nombre {
+  font-weight: bold;
+}
+
+.comment-section .comentarios .fecha {
+  color: #999999;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
+.comment-section .comentarios .mensaje {
+  margin-top: 0.5rem;
+}
+   
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FORO DE PREGUNTAS</h1>
+    <div style="white-space: pre-line">
+       
+      </div>
+    <h2>Carreras Universitarias</h2>
+    
+ </header>
+  <main>
+    <div style="white-space: pre-line">
+       
+    </div>
+    
+      <section class="preguntas">
+      <div 
+                                class="page-header-image mr-2" id="yui_3_17_2_1_1682280934697_61"><div 
+                                class="collaboration activityiconcontainer modicon_forum" 
+                                id="yui_3_17_2_1_1682280934697_60"><img class="icon activityicon" 
+                                aria-hidden="true" src="https://moodle.org/theme/image.php/moodleorg/forum/1682263265/monologo" 
+                                alt="" id="yui_3_17_2_1_1682280934697_59"></div></div>
+      
+      <ul>  
+      <h2>Preguntas</h2>
+      
+        <li>
+        <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                  
+                        <div class="preguntaa"title="¿Cómo puedo mejorar mi diseño web?">¿Cómo puedo mejorar mi diseño web?</div>
+                    <div class="respuestaa">
+                      <body>
+              
+                      <main>
+                        <section class="foro">
+                          <article class="pregunta">
+                           
+                              <h2>¿Cómo puedo mejorar mi diseño web?</h2>
+                              <p>Luis Torres | 23/04/2023</p>
+                         
+                            <div class="contenido">
+                              <p>Me gustaria saber como arreglar mi diseño de mi pagina web </p>
+                              
+                            </div>
+                            
+                          </article>
+                          <article class="respuesta">
+                            <div class="comment-section">
+                              <h2>Comentarios</h2>
+                              <form action="guardar_comentario.php" method="post">
+                                <label for="comentario">Responder:</label>
+                                <textarea id="comentario" name="comentario" required></textarea><br>
+                                <button type="submit">Enviar Respuesta</button>
+                              </form>
+                              <div class="comentarios">
+                                <h3>Comentarios anteriores:</h3>
+                                <ul>
+                                  <li>
+                                    <span class="nombre">Juan:</span>
+                                    <span class="fecha">01/05/2023</span>
+                                    <p class="mensaje">Buen artículo, gracias por compartir.</p>
+                                  </li>
+                                  <li>
+                                    <span class="nombre">María:</span>
+                                    <span class="fecha">30/04/2023</span>
+                                    <p class="mensaje">Me ha gustado mucho, felicidades.</p>
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                          </article>
+                          
+                        </section>
+                        
+                        
+                        <aside>
+                          <div style="white-space: pre-line">
+                         
+                          </div>
+                          <h2>Últimas preguntas</h2>
+                          <div style="white-space: pre-line">
+                         
+                          </div>
+                          <ul>
+                            <span class="fecha">30/04/2023</span>
+                            <p class="mensaje">Me ha gustado mucho, felicidades.</p>
+                            <li><a href="#">BASE DE DATOS</a></li>
+                            <li><a href="#">BASE DE DATOS</a></li>
+                  
+                          
+                            
+                          </ul>
+                        </aside>
+                      </main>
+                    
+                    </div>
+                    <span>Usuario1</span>
+       </li>
+        <li>
+                  
+                
+                    <div class="preguntaa" title="¿Qué lenguaje de programación es el más fácil de aprender?">¿Qué lenguaje de programación es el más fácil de aprender?</div>
+                    <div class="respuestaa">La capital de España es Madrid.</div>
+                    <span>Usuario2</span>
+        </li>
+        <li>
+            
+         
+                    <div class="preguntaa" title="¿Cómo puedo hacer que mi sitio web sea más accesible?">¿Cómo puedo hacer que mi sitio web sea más accesible?</div>
+                    <div class="respuestaa">La capital de España es Madrid.</div>
+                    <span>Usuario3</span>
+
+                </li>
+
+                <li>
+
+                    <div class="preguntaa"  title="¿Qué lenguaje de programación es mas facil de aprender?">¿Qué lenguaje de programación es mas facil de aprender?</div>
+                    <div class="respuestaa">La capital de España es Madrida.</div>
+                    <span>Usuario4</span>
+        </li>
+
+        <li>
+            
+            <div class="preguntaa" title="¿Qué lenil de aprender?">¿Qué lenguaes el más fácil de aprender?</div>
+            <div class="respuestaa">La capital de España es Madrida.</div>
+            <span>Usuario5</span>
+</li>
+        </ol>
+        </li>
+        <script>
+          var preguntas = document.querySelectorAll('.preguntaa');
+         
+         preguntas.forEach(function(pregunta) {
+           var respuestaa = pregunta.nextElementSibling;
+           
+           pregunta.addEventListener('click', function() {
+             if (respuestaa.style.display === 'none') {
+               respuestaa.style.display = 'block';
+             } else {
+               respuestaa.style.display = 'none';
+             }
+           });
+         });
+     </script>
+      </ul>
+    
+   
+      
+      <nav>
+        <ul class="pagination">
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="boton-nuevo">Nueva pregunta</a>
+    </section>
+  
+  </main>
+  <footer>
+    <p>El mejor foro para Carreraras Universitarias </p>
+  </footer>
+</body>
+</html>
+
+
