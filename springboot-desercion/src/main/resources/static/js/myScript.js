@@ -20,7 +20,7 @@
 		 success: function(rta) {
 			 $("#username").val("");
 			 $("#password").val("");
-			 Cookies.get('token');
+			 Cookies.set('token', rta.token);
 			 window.location.replace("inicio.html");
 		 },
 		 error: function(xhr, status) {
@@ -34,7 +34,7 @@
  }
 
  function logOut(){
-	Cookies.get('token');
+	Cookies.remove('token');
 	window.location.replace("index.html");
  }
 
@@ -69,7 +69,6 @@
 			 $("#email").val("");
 			 $("#password").val("");
 			 window.location.replace("pagina_inicio_1.html")
-			 Cookies.set('token', rta.token);
 		 },
 		 error: function(xhr, status) {
 			 alert('Disculpe, existió un problema');
