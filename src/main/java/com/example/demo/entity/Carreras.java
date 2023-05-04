@@ -18,15 +18,14 @@ public class Carreras implements Serializable {
 	private Integer semestres;
 	private Integer creditos;
 
-	@ManyToOne
-	@JoinColumn(name = "areaId")
-	@JsonIgnoreProperties("carreras")
-	private Area area;
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Area> area;
 
-	@ManyToMany
-	@JoinColumn(name = "lista de usuarios por carrera")
-	@JsonIgnoreProperties("carreras")
-	private List<Usuarios> usuarios;
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Usuario> usuarios;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Universidad> universidades;
 
 	public Integer getCarrerasID() {
 		return carrerasID;
@@ -60,21 +59,30 @@ public class Carreras implements Serializable {
 		this.creditos = creditos;
 	}
 
-	public Area getArea() {
+	public List<Area> getArea() {
 		return area;
 	}
 
-	public void setArea(Area area) {
+	public void setArea(List<Area> area) {
 		this.area = area;
 	}
 
-	public List<Usuarios> getUsuarios() {
+	public List<Usuario> getUsuarios() {
 		return usuarios;
 	}
 
-	public void setUsuarios(List<Usuarios> usuarios) {
+	public void setUsuarios(List<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
+
+	public List<Universidad> getUniversidades() {
+		return universidades;
+	}
+
+	public void setUniversidades(List<Universidad> universidades) {
+		this.universidades = universidades;
+	}
+	
 
 
 }

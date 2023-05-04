@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.demo.entity.Usuarios;
+import com.example.demo.entity.Usuario;
 import com.example.demo.service.UserService;
 
 @RestController
@@ -15,12 +15,12 @@ public class UserController {
 	private UserService userService;
 	
 	@GetMapping("all")
-	public List<Usuarios> getPizzas() {
+	public List<Usuario> getUsuarios() {
 		return userService.getAll();
 	}
 
 	@PostMapping("save")
-	public Usuarios savePizza(@RequestBody Usuarios u) {
+	public Usuario saveUsuarios(@RequestBody Usuario u) {
 		
 		return userService.save(u);
 	}

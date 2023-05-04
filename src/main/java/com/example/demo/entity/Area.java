@@ -16,13 +16,10 @@ public class Area implements Serializable {
 	private Integer areaId;
 	private String name;
 
-	@ManyToOne
-	@JoinColumn(name = "universidadId")
-	@JsonIgnoreProperties("area")
-	private Universidad universidad;
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Universidad> universidad;
 
-	@OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "area")
-	@JsonIgnoreProperties("area")
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Carreras> carreras;
 
 	public Integer getAreaId() {
@@ -41,11 +38,11 @@ public class Area implements Serializable {
 		this.name = name;
 	}
 
-	public Universidad getUniversidad() {
+	public List<Universidad> getUniversidad() {
 		return universidad;
 	}
 
-	public void setUniversidad(Universidad universidad) {
+	public void setUniversidad(List<Universidad> universidad) {
 		this.universidad = universidad;
 	}
 

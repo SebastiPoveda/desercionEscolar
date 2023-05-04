@@ -19,9 +19,11 @@ public class Universidad implements Serializable {
 	private String tipo;
 	private String ubicacion;
 
-	@OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "universidad")
-	@JsonIgnoreProperties("universidad")
+	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Area> areas;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	private List<Carreras> carreras;
 
 	public Integer getUniversidadId() {
 		return universidadId;
@@ -61,5 +63,13 @@ public class Universidad implements Serializable {
 
 	public void setAreas(List<Area> areas) {
 		this.areas = areas;
+	}
+	
+	public List<Carreras> getCarreras() {
+		return carreras;
+	}
+
+	public void setCarreras(List<Carreras> carreras) {
+		this.carreras = carreras;
 	}
 }

@@ -5,18 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.entity.Usuarios;
+import com.example.demo.entity.Usuario;
 
 @Repository
 public class UserRepository {
 	@Autowired
-	private UsuariosCRUDRepository users;
+	private UserCrudRepository users;
 	
-	public List<Usuarios> getAll(){
-		return (List<Usuarios>)users.findAll();
+	public List<Usuario> getAll(){
+		return (List<Usuario>)users.findAll();
 	}
 	
-	public Usuarios save(Usuarios u) {
+	public Usuario save(Usuario u) {
 		return users.save(u);
 	}
 }

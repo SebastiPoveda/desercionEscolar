@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Registro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/stylesRegister.css" type="text/css">
+    <script src="js/myScript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Carreras Universitarias</h1>
+    <form action="#" method="post" id="register-form">
+        <div>
+          <label for="Name">Nombre:</label>
+          <input type="text" id="name" name="nombre" required>
+        </div>
+        
+        <div>
+          <label for="lastname">Apellido:</label>
+          <input type="text" id="lastname" name="apellido" required>
+        </div>
+        
+        <div>
+          <label for="email">Correo electrónico:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div>
+          <label for="password">Contraseña:</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit" onclick="registerData()">Registrarse</button>
+      </form>
+
+      <div class="modal" id="modal">
+        <div class="modal-content">
+          <span class="close-modal" id="close-button">&times;</span>
+          <h2>Registro Exitoso</h2>
+          <p>Gracias por registrarte en nuestra página. Tu cuenta ha sido creada exitosamente.</p>
+        </div>
+      </div>
+
+      <p id="Mensaje"></p>
+</body>
+
+</html>
