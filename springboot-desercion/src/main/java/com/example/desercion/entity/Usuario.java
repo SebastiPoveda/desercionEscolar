@@ -19,7 +19,6 @@ import java.util.List;
 @Entity
 @Table(name="usuarios")
 public class Usuario implements UserDetails {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -27,6 +26,11 @@ public class Usuario implements UserDetails {
     private String lastname;
     private String email;
     private String password;
+
+    private String foto;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Carreras> listaFavoritos;
 
     @Enumerated(EnumType.STRING)
     private Role role;

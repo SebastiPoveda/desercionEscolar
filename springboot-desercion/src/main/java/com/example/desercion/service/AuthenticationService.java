@@ -5,7 +5,7 @@ import com.example.desercion.auth.AuthenticationResponse;
 import com.example.desercion.auth.RegisterRequest;
 import com.example.desercion.entity.Role;
 import com.example.desercion.entity.Usuario;
-import com.example.desercion.repository.UserCrudRepository;
+import com.example.desercion.repository.UsuarioCrudRepository;
 import com.example.desercion.security.JwtService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AuthenticationService {
 
-    private final UserCrudRepository repository;
+    private final UsuarioCrudRepository repository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;

@@ -1,50 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Registro</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="../assets/logo-vt.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
-    <link rel="stylesheet" href="css/stylesRegister.css" type="text/css">
+    <link rel="stylesheet" href="../css/stylesLogin.css" type="text/css">
     <script src="js/myScript.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
-<body>
-    <h1>Carreras Universitarias</h1>
-    <form action="#" method="post" id="register-form">
-        <div>
-          <label for="Name">Nombre:</label>
-          <input type="text" id="name" name="nombre" required>
-        </div>
-        
-        <div>
-          <label for="lastname">Apellido:</label>
-          <input type="text" id="lastname" name="apellido" required>
-        </div>
-        
-        <div>
-          <label for="email">Correo electrónico:</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        
-        <div>
-          <label for="password">Contraseña:</label>
-          <input type="password" id="password" name="password" required>
-        </div>
+<body class="body-login">
+<span class="border border-success-subtle rounded-5">
+        <div class="bg-white p-5 rounded-5 text-secondary shadow" style="height: 30rem">
 
-        <button type="submit" onclick="registerData()">Registrarse</button>
-      </form>
+            <div class="text-center fs-1 fw-bold">Registrarse</div>
+            <div class="text-center fw-bold">Rapido y facil</div>
 
-      <div class="modal" id="modal">
-        <div class="modal-content">
-          <span class="close-modal" id="close-button">&times;</span>
-          <h2>Registro Exitoso</h2>
-          <p>Gracias por registrarte en nuestra página. Tu cuenta ha sido creada exitosamente.</p>
+            <div class="d-flex justify-content-around mt-4">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control" id="name" placeholder="Nombre">
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control" id="lastname" placeholder="Apellido">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">Correo</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+
+            <div class="mb-2">
+                <label class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" placeholder="Minimo 8 caracteres">
+            </div>
+
+            <div class="btn btn-outline-success  w-100 mt-4 fw-semibold shadow-sm" onclick="registerData()">
+                Registrarse
+            </div>
         </div>
-      </div>
-
-      <p id="Mensaje"></p>
+    </span>
 </body>
 
 </html>

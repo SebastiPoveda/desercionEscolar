@@ -10,7 +10,7 @@
 	 
 	 $.ajax({
 		 
-		 url:"/api/v1/auth/register",
+		 url:"/api/v1/auth/authenticate",
 		 type:"POST",
 		 contentType:"application/json",
 		 dataType:"json",
@@ -18,10 +18,10 @@
 		 data:JSON.stringify(data),
 
 		 success: function(rta) {
-			 console.log(rta);
 			 $("#username").val("");
 			 $("#password").val("");
 			 Cookies.set('token', rta.token);
+			 window.location.replace();
 		 },
 		 error: function(xhr, status) {
 			 alert('Disculpe, existió un problema');
@@ -41,9 +41,9 @@
 	 let password = $("#password").val();
 
 	 let data = {
-		 name:name,
-		 lastname:lastname,
-		 email:email,
+		 name: name,
+		 lastname: lastname,
+		 email: email,
 		 password: password
 	 }
 
@@ -62,8 +62,8 @@
 			 $("#lastname").val("");
 			 $("#email").val("");
 			 $("#password").val("");
-			 window.location.replace("index.html")
-			 parseJwt(rta)
+			 window.location.replace("pagina_inicio_1.html")
+
 		 },
 		 error: function(xhr, status) {
 			 alert('Disculpe, existió un problema');
@@ -75,35 +75,19 @@
 	 });
  }
 
- window.onload = function() {
-	 var form = document.getElementById("register-form");
-	 form.addEventListener("submit", function(event) {
-		 event.preventDefault();
-		 showModal();
-	 });
- }
+ function Checking() {
+	 // seleccionar todas las casillas de verificación en la página
+	 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
- function showModal() {
-	 var modal = document.getElementById("modal");
-	 var closeButton = document.getElementById("close-button");
-	 modal.classList.add("show-modal");
-	 closeButton.addEventListener("click", function() {
-		 modal.classList.remove("show-modal");
-	 });
- }
+	 let values = [];
 
- function parseJwt(token) {
-	 const base64Url = token.split('.')[1];
-	 const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-	 const jsonPayload = decodeURIComponent(
-		 atob(base64)
-			 .split('')
-			 .map(function (c) {
-				 return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-			 })
-			 .join('')
-	 );
-	 return JSON.parse(jsonPayload);
+	 // iterar sobre las casillas de verificación y encontrar las que están marcadas
+	 for (let i = 0; i < checkboxes.length; i++) {
+		 if (checkboxes[i].checked) {
+			 values.push(checkboxes[i].value);
+		 }
+	 }
+	 console.log(values);
  }
  
  
