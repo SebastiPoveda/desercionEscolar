@@ -13,7 +13,6 @@ public class PreguntaService {
 
     @Autowired
     private PreguntaRepository preguntaRepository;
-
     public List<Pregunta> getAll(){
         return (List<Pregunta>) preguntaRepository.findAll();
     }

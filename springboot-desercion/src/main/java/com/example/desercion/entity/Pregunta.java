@@ -14,11 +14,9 @@ public class Pregunta implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private String titulo;
     private String contenido;
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Usuario> usuarios;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Usuario usuario;
 
 }

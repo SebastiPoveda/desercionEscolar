@@ -2,6 +2,7 @@ package com.example.desercion.controller;
 
 import com.example.desercion.entity.Pregunta;
 import com.example.desercion.service.PreguntaService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.Optional;
 @RequestMapping("/api/v1/forum")
 public class PreguntaController {
 
+    @Autowired
     private PreguntaService preguntaService;
 
     @GetMapping("/all")
@@ -23,7 +25,7 @@ public class PreguntaController {
         return preguntaService.save(p);
     }
 
-    @GetMapping("/title/{title}")
+    @GetMapping("/title")
     public Optional<Pregunta> getByTitle(String title){
         return preguntaService.getByTitle(title);
     }
