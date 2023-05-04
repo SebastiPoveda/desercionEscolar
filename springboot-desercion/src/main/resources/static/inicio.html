@@ -26,24 +26,24 @@
 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li>
-                        <h4><a href="#" class="nav-link px-4 link-light">Inicio</a></h4>
+                        <h5><a href="#" class="nav-link px-4 link-light">Inicio</a></h5>
                     </li>
                     <li>
-                        <h4><a href="#" class="nav-link px-4 link-light">Recursos</a></h4>
+                        <h5><a href="#" class="nav-link px-4 link-light">Recursos</a></h5>
                     </li>
                     <li>
-                        <h4><a href="#" class="nav-link px-3 link-light">Programas</a></h4>
+                        <h5><a href="#" class="nav-link px-3 link-light">Programas</a></h5>
                     </li>
                 </ul>
 
                 <ul class="nav col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                     <li>
-                        <h4><a href="#" class="nav-link px-2 link-light">Perfil</a></h4>
+                        <h5><a href="perfil.html" class="nav-link px-2 link-light">Perfil</a></h5>
                     </li>
                     <li>
-                        <h4><a href="#" class="nav-link px-5 link-light">Ajustes</a></h4>
+                        <h5><a href="#" class="nav-link px-5 link-light">Ajustes</a></h5>
                     </li>
-                    <button type="button" class="btn btn-outline-light btn-lg">Cerrar Sesion</button>
+                    <button type="button" class="btn btn-outline-light btn-lg"  onclick="logOut()">Cerrar Sesion</button>
                 </ul>
             </div>
         </div>
@@ -57,24 +57,24 @@
                 </div>
                 
                 <div class="col order-1">
-                    <label for="inputPassword" class="col-sm-1 col-form-label">
+                    <label class="col-sm-1 col-form-label">
                         <h4><strong>Titulo</strong></h4>
                     </label>
                     <div class="mb-2 row">
                         <div class="input-group input-group-lg">
-                            <textarea class="form-control" aria-label="With textarea" id="ask_titulo"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" id="titulo"></textarea>
                         </div>
                     </div>
-                    <label for="exampleFormControlInput1" class="form-label">
+                    <label class="form-label">
                         <h4><strong>Pregunta</strong></h4>
                     </label>
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Pregunta aqui" id="ask_contenido"
-                            style="height: 100px; width: 90vh;"></textarea>
-                        <label for="floatingTextarea2">Pregunta lo que quieras</label>
+                        <textarea class="form-control" placeholder="Pregunta aqui" id="contenido" 
+                        style="height: 100px; width: 90vh;"></textarea>
+                        <label>Pregunta lo que quieras</label>
                     </div><br>
                     <div class="d-grid gap-3 d-md-flex justify-content-md-end">
-                        <button class="btn btn-outline-success" type="button" onclick="">Publicar</button>
+                        <button class="btn btn-outline-success" type="button" onclick="sendQuestion()">Publicar</button>
                     </div>
 
                     <div id="respuesta"></div>
