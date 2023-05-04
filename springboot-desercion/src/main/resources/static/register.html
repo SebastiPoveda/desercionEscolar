@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/assets/logo-vt.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../CSS/stylesLogin.css" type="text/css">
+    <script src="js/scriptlogin.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body class="body-login">
+    <span class="border border-success-subtle rounded-5">
+        <div class="bg-white p-5 rounded-5 text-secondary shadow" style="height: 30rem">
+
+            <div class="text-center fs-1 fw-bold">Registrarse</div>
+            <div class="text-center fw-bold">Rapido y facil</div>
+
+            <div class="d-flex justify-content-around mt-4">
+                <div class="d-flex align-items-center gap-2">
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control" placeholder="Apellido">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-2">
+                <label for="exampleFormControlInput1" class="form-label">Correo</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+            </div>
+
+            <div class="mb-2">
+                <label for="exampleFormControlInput1" class="form-label">Contraseña</label>
+                <input type="email" class="form-control" id="email" placeholder="Minimo 8 caracteres">
+            </div>
+
+            <div class="btn btn-outline-success  w-100 mt-4 fw-semibold shadow-sm" onclick="sendData()">
+                Registrarse
+            </div>
+        </div>
+    </span>
+</body>
+
+</html>
