@@ -16,4 +16,5 @@ public class UsuarioRepository {
         return (List<Usuario>) usuarioCrudRepository.findAll();
     }
 
+
 }

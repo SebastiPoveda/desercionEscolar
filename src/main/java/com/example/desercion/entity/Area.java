@@ -10,7 +10,6 @@ import java.util.List;
 @Entity
 @Table(name = "area")
 public class Area implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer areaId;

@@ -26,7 +26,10 @@ public class Usuario implements UserDetails {
     private String lastname;
     private String email;
     private String password;
-    private String foto = "https://e7.pngegg.com/pngimages/184/821/png-clipart-mangalore-united-states-management-computer-science-business-profile-angle-white.png";
+    private String foto;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Pregunta> listaPreguntas;
 
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Carreras> listaFavoritos;
