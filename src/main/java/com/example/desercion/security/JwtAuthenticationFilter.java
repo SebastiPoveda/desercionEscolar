@@ -1,5 +1,7 @@
 package com.example.desercion.security;
 
+import com.example.desercion.entity.Usuario;
+import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -55,8 +57,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
 
         }
-
         filterChain.doFilter(request, response);
+    }
+    private String getFirstName(String token){
+        Usuario user = new Usuario();
+        Claims c = jwtService.extractAllClaims(token);
+        user.setFirstname((String) c.get("firstname"));
+        return user.getFirstname();
     }
 
 }

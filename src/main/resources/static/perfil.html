@@ -22,7 +22,7 @@
     }
 
     /* Estilos para el nombre y apellido */
-    h1 {
+    h3 {
       text-align: center;
       font-size: 32px;
       margin-bottom: 10px;
@@ -84,8 +84,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/stylesLogin.css" type="text/css">
-  <script src="js/myScript.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+  <script src="js/myScript.js"></script>
+
 </head>
 
 <body>
@@ -128,8 +130,18 @@
   <img src="https://canon-creators.com/assets/img/avatars/avatar.png" alt="Foto de perfil">
 
   <!-- Nombre y apellido -->
-  <h1 id="nameUser"></h1>
-  <script src="script.js"></script>
+  <h3 id="nameUser"></h3>
+
+  <script>
+    function nameUser() {
+      let t = Cookies.get("token");
+      let user = parseJwt(t);
+      let name = user["USA"];
+      return name;
+    }
+    const nameUserElement = document.getElementById("nameUser");
+    nameUserElement.textContent = nameUser();
+  </script>
 
   <!-- Lista de favoritos -->
   <h2>Mis favoritos:</h2>

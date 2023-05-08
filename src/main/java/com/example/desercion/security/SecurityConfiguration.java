@@ -22,8 +22,10 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
 
         http
-                .authorizeHttpRequests()
-                .requestMatchers("/api/v1/auth/**","/api/v1/forum/**","/api/v1/**","/js/**", "/css/**", "/registro.html","/assets/**","/index.html","/pagina_inicio_1.html", "/pagina_inicio_2.html", "/pagina_inicio_3.html", "/inicio.html","/perfil.html")
+                .authorizeHttpRequests(/*authorize -> authorize
+                .requestMatchers("/pagina_inicio_1.html", "/pagina_inicio_2.html","/pagina_inicio_2.html", "/pagina_inicio_3.html", ,"/perfil.html").permitAll()
+                .anyRequest().denyAll()*/)
+                .requestMatchers("/api/v1/auth/**","/js/**", "/css/**", "/registro.html","/assets/**","/index.html","/pagina_inicio_1.html", "/pagina_inicio_2.html", "/pagina_inicio_3.html", "/inicio.html","/perfil.html")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

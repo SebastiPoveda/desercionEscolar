@@ -7,6 +7,7 @@ import com.example.desercion.service.AuthenticationService;
 import com.example.desercion.auth.RegisterRequest;
 import com.example.desercion.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,11 @@ public class AuthenticationController {
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody RegisterRequest request
     ) {
-        return ResponseEntity.ok(service.register(request));
+        if(!request.getFirstname().isBlank() && !request.getLastname().isBlank() && !request.getEmail().isBlank() && !request.getPassword().isBlank() ){
+            return ResponseEntity.ok(service.register(request));
+        }else {
+            return ResponseEntity.status(HttpStatusCode.valueOf(403)).build();
+        }
     }
 
     @PostMapping("/authenticate")

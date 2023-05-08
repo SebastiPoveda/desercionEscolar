@@ -26,7 +26,7 @@ public class Usuario implements UserDetails {
     private String lastname;
     private String email;
     private String password;
-    private String foto;
+    private String foto = "";
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Pregunta> listaPreguntas;

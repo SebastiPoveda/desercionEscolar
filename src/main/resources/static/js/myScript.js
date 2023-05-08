@@ -20,7 +20,7 @@
 		 success: function(rta) {
 			 $("#username").val("");
 			 $("#password").val("");
-			 Cookies.get('token');
+			 Cookies.set('token',rta['token']);
 			 window.location.replace("inicio.html");
 		 },
 		 error: function(xhr, status) {
@@ -34,7 +34,7 @@
  }
 
  function logOut(){
-	Cookies.get('token');
+	Cookies.remove('token');
 	window.location.replace("index.html");
  }
 
@@ -64,13 +64,8 @@
 
 		 success: function(rta) {
 			 console.log(rta);
-			 $("#firstname").val("");
-			 $("#lastname").val("");
-			 $("#email").val("");
-			 $("#password").val("");
-			 parseJwt(token);
-			 Cookies.set('token', rta.token);
-			 window.location.replace("pagina_inicio_1.html")
+			 Cookies.set("token",rta['token']);
+			 //window.location.replace("pagina_inicio_1.html");
 		 },
 		 error: function(xhr, status) {
 			 alert('Disculpe, existió un problema');
@@ -112,6 +107,9 @@
 		type:"POST",
 		contentType:"application/json",
 		dataType:"json",
+		headers:{
+		  "Authorization": "Bearer "+ Cookies.get('token')
+		},
 
 		data:JSON.stringify(question),
 

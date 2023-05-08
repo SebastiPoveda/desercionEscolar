@@ -22,7 +22,8 @@ public class PreguntaController {
 
     @PostMapping("/create")
     public Pregunta makePregunta(@RequestBody Pregunta p){
-        return preguntaService.save(p);
+        A a = new A();
+        return preguntaService.save(p,a.getCorreo());
     }
 
     @GetMapping("/title")
