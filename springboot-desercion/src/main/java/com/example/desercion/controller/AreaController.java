@@ -13,7 +13,6 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/area")
 public class AreaController {
-
     @Autowired
     private AreaService areaService;
 

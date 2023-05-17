@@ -25,6 +25,8 @@
 		 },
 		 error: function(xhr, status) {
 			 alert('Usuario no existente');
+			 $("#username").val("");
+			 $("#password").val("");
 		 },
 		 complete: function(xhr, status) {
 			 //alert('Petición realizada');
@@ -34,20 +36,19 @@
  }
 
  function logOut(){
-	Cookies.remove('token');
 	window.location.replace("index.html");
  }
 
 
  function registerData(){
 
-	 let name = $("#name").val();
+	 let firstname = $("#firstname").val();
 	 let lastname = $("#lastname").val();
 	 let email = $("#email").val();
 	 let password = $("#password").val();
 
 	 let data = {
-		 name: name,
+		 firstname: firstname,
 		 lastname: lastname,
 		 email: email,
 		 password: password
@@ -64,7 +65,7 @@
 
 		 success: function(rta) {
 			 console.log(rta);
-			 $("#name").val("");
+			 $("#firstname").val("");
 			 $("#lastname").val("");
 			 $("#email").val("");
 			 $("#password").val("");
@@ -82,12 +83,12 @@
 
  function sendQuestion(){
 
-	 let title = $("#titulo").val();
-	 let content = $("#contenido").val();
+	 let titulo = $("#titulo").val();
+	 let contenido = $("#contenido").val();
 
 	 let question = {
-		 title: titulo,
-		 content: contenido
+		 titulo: titulo,
+		 contenido: contenido
 	 }
 
 	 $.ajax({
@@ -103,6 +104,7 @@
 			console.log(rta);
 			$("#titulo").val("");
 			$("#contenido").val("");
+			forumRequest();
 		},
 		error: function(xhr, status) {
 			alert('Disculpe, existió un problema');
@@ -115,10 +117,10 @@
  }
 
  function CheckingA() {
-	 // seleccionar todas las casillas de verificación en la página
-	 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 	 let areas = [];
+	 // seleccionar todas las casillas de verificación en la página
+	 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 	 // iterar sobre las casillas de verificación y encontrar las que están marcadas
 	 for (let i = 0; i < checkboxes.length; i++) {
@@ -129,21 +131,15 @@
 
 	 $.ajax({
 
-		 url:"/api/v1/auth/register",
+		 url:"/api/v1/area/save",
 		 type:"POST",
 		 contentType:"application/json",
 		 dataType:"json",
-
-		 data:JSON.stringify(data),
+		 traditional: true,
+		 data:JSON.stringify({areas: areas}),
 
 		 success: function(rta) {
-			 console.log(rta);
-			 $("#name").val("");
-			 $("#lastname").val("");
-			 $("#email").val("");
-			 $("#password").val("");
-			 window.location.replace("pagina_inicio_2.html")
-
+			 console.log(this.areas);
 		 },
 		 error: function(xhr, status) {
 			 alert('Disculpe, existió un problema');
