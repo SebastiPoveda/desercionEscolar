@@ -38,8 +38,7 @@
  function logOut(){
 	window.location.replace("index.html");
  }
-
-
+ 
  function registerData(){
 
 	 let firstname = $("#firstname").val();
@@ -81,45 +80,11 @@
 	 });
  }
 
- function sendQuestion(){
-
-	 let titulo = $("#titulo").val();
-	 let contenido = $("#contenido").val();
-
-	 let question = {
-		 titulo: titulo,
-		 contenido: contenido
-	 }
-
-	 $.ajax({
-
-		url:"/api/v1/forum/create",
-		type:"POST",
-		contentType:"application/json",
-		dataType:"json",
-
-		data:JSON.stringify(question),
-
-		success: function(rta) {
-			console.log(rta);
-			$("#titulo").val("");
-			$("#contenido").val("");
-		},
-		error: function(xhr, status) {
-			alert('Disculpe, existió un problema');
-		},
-		complete: function(xhr, status) {
-			//alert('Petición realizada');
-		}
-
-	});
- }
-
  function CheckingA() {
-	 // seleccionar todas las casillas de verificación en la página
-	 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 	 let areas = [];
+	 // seleccionar todas las casillas de verificación en la página
+	 const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
 	 // iterar sobre las casillas de verificación y encontrar las que están marcadas
 	 for (let i = 0; i < checkboxes.length; i++) {
@@ -130,21 +95,15 @@
 
 	 $.ajax({
 
-		 url:"/api/v1/auth/register",
+		 url:"/api/v1/area/save",
 		 type:"POST",
 		 contentType:"application/json",
 		 dataType:"json",
-
-		 data:JSON.stringify(data),
+		 traditional: true,
+		 data:JSON.stringify({areas: areas}),
 
 		 success: function(rta) {
-			 console.log(rta);
-			 $("#name").val("");
-			 $("#lastname").val("");
-			 $("#email").val("");
-			 $("#password").val("");
-			 window.location.replace("pagina_inicio_2.html")
-
+			 console.log(this.areas);
 		 },
 		 error: function(xhr, status) {
 			 alert('Disculpe, existió un problema');
