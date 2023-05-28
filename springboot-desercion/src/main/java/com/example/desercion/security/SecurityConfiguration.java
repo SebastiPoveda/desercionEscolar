@@ -20,17 +20,18 @@ public class SecurityConfiguration {
     private final AuthenticationProvider authenticationProvider;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-
         http
                 .authorizeHttpRequests()
-                .requestMatchers("/api/v1/auth/**","/api/v1/forum/**","/api/v1/**","/js/**", "/css/**", "/registro.html","/assets/**","/index.html","/pagina_inicio_1.html", "/pagina_inicio_2.html", "/pagina_inicio_3.html", "/inicio.html","/perfil.html", "/foro.html")
+                .requestMatchers("/api/v1/auth/**","/api/v1/forum/**","/api/v1/**","/js/**", "/css/**", "/registro.html",
+                        "/assets/**","/index.html/","/pagina_inicio_1.html/", "/pagina_inicio_2.html/",
+                        "/pagina_inicio_3.html", "/inicio.html","/profile.html", "/forum.html","/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                 //.sessionManagement()
                 //.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                //.and()
+                //  .and()
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
         http.cors().and().csrf().disable();

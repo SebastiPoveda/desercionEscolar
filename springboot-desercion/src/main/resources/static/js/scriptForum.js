@@ -1,6 +1,42 @@
+
+function sendQuestion(){
+
+	let titulo = $("#titulo").val();
+	let contenido = $("#contenido").val();
+
+	let question = {
+		titulo: titulo,
+		contenido: contenido
+	}
+	
+	$.ajax({
+
+	   url:"/api/v1/forum/create",
+	   type:"POST",
+	   contentType:"application/json",
+	   dataType:"json",
+
+	   data:JSON.stringify(question),
+
+	   success: function(rta) {
+		   console.log(rta);
+		   $("#titulo").val("");
+		   $("#contenido").val("");
+		   forumRequest();
+	   },
+	   error: function(xhr, status) {
+		   alert('Disculpe, existió un problema');
+	   },
+	   complete: function(xhr, status) {
+		   //alert('Petición realizada');
+	   }
+
+   });
+}
+
 function forumRequest() {
 	$.ajax({
-		url: "/api/v1/auth/all",
+		url: "/api/v1/forum/all",
 		type: "GET",
 		contentType: "application/json",
 		dataType: "json",
@@ -41,7 +77,7 @@ function paintQuest(o) {
 	let k = "";
 	for (let i = 0; i < o.length; i++) {
 		k += `<h4> ${o[i].titulo} </h4>
-		<p> ${o[i].contenido} </p> `
+		<p> ${o[i].contenido} </p> <br>`
 	}
 	$("#forumquestions").empty();
 	$("#forumquestions").append(k);

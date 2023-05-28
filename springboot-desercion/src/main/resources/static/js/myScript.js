@@ -38,8 +38,7 @@
  function logOut(){
 	window.location.replace("index.html");
  }
-
-
+ 
  function registerData(){
 
 	 let firstname = $("#firstname").val();
@@ -79,41 +78,6 @@
 		 }
 
 	 });
- }
-
- function sendQuestion(){
-
-	 let titulo = $("#titulo").val();
-	 let contenido = $("#contenido").val();
-
-	 let question = {
-		 titulo: titulo,
-		 contenido: contenido
-	 }
-
-	 $.ajax({
-
-		url:"/api/v1/forum/create",
-		type:"POST",
-		contentType:"application/json",
-		dataType:"json",
-
-		data:JSON.stringify(question),
-
-		success: function(rta) {
-			console.log(rta);
-			$("#titulo").val("");
-			$("#contenido").val("");
-			forumRequest();
-		},
-		error: function(xhr, status) {
-			alert('Disculpe, existió un problema');
-		},
-		complete: function(xhr, status) {
-			//alert('Petición realizada');
-		}
-
-	});
  }
 
  function CheckingA() {

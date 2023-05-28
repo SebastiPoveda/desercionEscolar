@@ -13,6 +13,7 @@ public class Carreras implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer carrerasID;
+    private String nombre;
     private String modalidad;
     private Integer semestres;
     private Integer creditos;
@@ -25,4 +26,5 @@ public class Carreras implements Serializable {
 
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Universidad> universidades;
+
 }
